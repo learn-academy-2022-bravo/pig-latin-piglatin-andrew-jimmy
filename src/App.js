@@ -33,7 +33,16 @@ class App extends Component {
       })
       console.log("vowelsArray:", vowelsArray)
 
-      // your code here!
+      if (currentWord.slice(0,1).match(/[aeiouAEIOU]/)) {
+        currentWord = currentWord + "way"
+      } else {
+          let moveLetters = ""
+          while (currentWord.slice(0,1).match(/[^aeiouAEIOU]/)) {
+            moveLetters += currentWord.slice(0,1);
+            currentWord = currentWord.slice(1, currentWord.length)
+          }
+          currentWord = currentWord + moveLetters + "ay"
+        }
 
       // Remember: console.log is your friend :)
 
